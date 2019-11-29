@@ -44,3 +44,8 @@ Before you can start the lab, you have to complete the NiFi+Kafka install from t
    /usr/kafka_2.11-2.1.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --partitions 2 --replication-factor 1 --topic nyc_taxi_fares_valid
    /usr/kafka_2.11-2.1.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --partitions 2 --replication-factor 1 --topic nyc_taxi_fares_invalid
    ```
+   11. If you get an error, make sure Zookeeper and Kafka are started:
+   ```
+   sudo /usr/kafka_2.11-2.1.0/bin/kafka-server-start.sh -daemon /usr/kafka_2.11-2.1.0/config/server.properties
+   sudo /usr/kafka_2.11-2.1.0/bin/zookeeper-server-start.sh -daemon /usr/kafka_2.11-2.1.0/config/zookeeper.properties
+   ```
