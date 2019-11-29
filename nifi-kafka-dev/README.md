@@ -35,3 +35,6 @@ Before you can start the lab, you have to complete the NiFi+Kafka install from t
       ![CSVReader props](images/csv-reader-props.png)
       3. Create a `AvroRecordSetWriter` with default properties
       4. Enable all 3 Controller Services
+   8. Add 2 `PublishKafkaRecord_2_0` processors
+   9. Link the `valid` and `invalid` relationships of the `ValidateRecord` processor to the `PublishKafkaRecord_2_0` processors (1 by processor)
+   ![Dataflow v2](images/dataflow-v2.png)
