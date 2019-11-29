@@ -29,3 +29,9 @@ Before you can start the lab, you have to complete the NiFi+Kafka install from t
    5. Start the `GetTCP` processor, FlowFiles should start queuing in the `Success` queue
    ![Dataflow v1](images/dataflow-v1.png)
    6. Add an attribute to the `UpdateAttribute` processor: `schema.name = nyc_taxi_fares`
+   7. Go to `Configure` -> `CONTROLLER SERVICES` and:
+      1. Create an `AvroSchemaRegistry`, and add the [`nyc_taxi_fares`](nyc_taxi_fares.avsc) schema (`nyc_taxi_fares = AVSC_FILE_CONTENT`)
+      2. Create a `CSVReader` with the properties:
+      ![CSVReader props](images/csv-reader-props.png)
+      3. Create a `AvroRecordSetWriter` with default properties
+      4. Enable all 3 Controller Services
