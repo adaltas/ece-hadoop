@@ -18,5 +18,13 @@ Before you can start the lab, you have to complete the NiFi+Kafka install from t
 ## Lab
 
 1. Copy the [ece-spark](https://github.com/adaltas/ece-spark) repository to your VM (in `/tmp` for example)
-2. Stream the datasets using the Python script
+2. Stream the datasets to a socket using the Python script
 3. Develop the first dataflow that reads the records from the sockets, convert them to Avro and writes them to Kafka
+   1. Connect to NiFi: [http://20.20.20.21:8080/nifi](http://20.20.20.21:8080/nifi)
+   2. Create a `GetTCP` processor to read data from the socket
+      1. Properties: `Endpoint List = localhost:SOCKER_PORT`, `End of message delimiter byte = 10`
+      2. Settings: `Automatically terminate relationships = Partial`
+   3. Create a `ValidateRecord` processor
+   4. Link the `GetTCP` `Success` relationship to the `ValidateRecord` processor
+   5. Start the `GetTCP` processor, FlowFiles should start queuing in the `Success` queue
+   ![Dataflow v1](images/dataflow-v1.png)
