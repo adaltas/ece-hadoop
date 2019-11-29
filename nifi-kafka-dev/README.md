@@ -24,7 +24,7 @@ Before you can start the lab, you have to complete the NiFi+Kafka install from t
    2. Create a `GetTCP` processor to read data from the socket
       1. Properties: `Endpoint List = localhost:SOCKER_PORT`, `End of message delimiter byte = 10`
       2. Settings: `Automatically terminate relationships = Partial`
-   3. Create a `ValidateRecord` processor
-   4. Link the `GetTCP` `Success` relationship to the `ValidateRecord` processor
+   3. Create a `UpdateAttribute` and a `ValidateRecord` processor
+   4. Link the `GetTCP` `Success` relationship to the `UpdateAttribute` processor
    5. Start the `GetTCP` processor, FlowFiles should start queuing in the `Success` queue
    ![Dataflow v1](images/dataflow-v1.png)
