@@ -1,0 +1,18 @@
+{
+  "namespace": "ece.hadoop.nifi",
+  "type": "record",
+  "name": "NYCTaxiFares",
+  "fields": [
+    { "name": "ride_id", "type": "int" },
+    { "name": "taxi_id", "type": "int" },
+    { "name": "driver_id", "type": "int" },
+    {
+      "name": "start_time",
+      "type": { "type": "long", "logicalType": "timestamp-millis" }
+    },
+    { "name": "payment_type", "type": "string" },
+    { "name": "tip", "type": "float" },
+    { "name": "tolls", "type": "float" },
+    { "name": "total_fare", "type": "float" }
+  ]
+}
