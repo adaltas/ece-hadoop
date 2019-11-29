@@ -28,3 +28,4 @@ Before you can start the lab, you have to complete the NiFi+Kafka install from t
    4. Link the `GetTCP` `Success` relationship to the `UpdateAttribute` processor
    5. Start the `GetTCP` processor, FlowFiles should start queuing in the `Success` queue
    ![Dataflow v1](images/dataflow-v1.png)
+   6. Add an attribute to the `UpdateAttribute` processor: `schema.name = nyc_taxi_fares`
