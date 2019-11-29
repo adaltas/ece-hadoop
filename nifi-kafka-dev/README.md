@@ -49,3 +49,5 @@ Before you can start the lab, you have to complete the NiFi+Kafka install from t
    sudo /usr/kafka_2.11-2.1.0/bin/zookeeper-server-start.sh -daemon /usr/kafka_2.11-2.1.0/config/zookeeper.properties
    sudo /usr/kafka_2.11-2.1.0/bin/kafka-server-start.sh -daemon /usr/kafka_2.11-2.1.0/config/server.properties
    ```
+   12. Configure the `PublishKafkaRecord_2_0` processors:
+   ![PublishKafkaRecord props](images/publish-kafka-props.png)
